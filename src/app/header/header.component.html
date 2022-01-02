@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <a mat-button
+     class="header-icon"
+     routerLink="home">
+    UnionStore
+  </a>
+
+  <div class="header-icon-spacer"></div>
+
+  <a mat-button
+     class="header-items-spacer"
+     routerLink="home">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+
+  <a mat-button
+     class="header-items-spacer"
+     routerLink="products">
+    <mat-icon>list</mat-icon>
+    Products
+  </a>
+  <a mat-button
+     class="header-items-spacer"
+     routerLink="shopping-cart">
+    <mat-icon>shopping_cart</mat-icon>
+    Shopping Cart
+  </a>
+
+  <div class="header-raised-button-spacer"></div>
+
+  <div [ngSwitch]="true">
+    <a mat-raised-button
+       *ngSwitchCase="true"
+       color="accent"
+       routerLink="login">
+      <mat-icon>login</mat-icon>
+      Login
+    </a>
+    <a mat-raised-button
+       *ngSwitchCase="false"
+       color="accent"
+       routerLink="account">
+      <mat-icon>account_circle</mat-icon>
+      Account
+    </a>
+  </div>
+
+</mat-toolbar>

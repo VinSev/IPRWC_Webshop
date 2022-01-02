@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$IPRWC_Webshop-primary: mat.define-palette(mat.$indigo-palette);
+$IPRWC_Webshop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$IPRWC_Webshop-warn: mat.define-palette(mat.$red-palette);
+
+$IPRWC_Webshop-theme: mat.define-light-theme((
+  color: (
+    primary: $IPRWC_Webshop-primary,
+    accent: $IPRWC_Webshop-accent,
+    warn: $IPRWC_Webshop-warn,
+  )
+));
+
+@include mat.all-component-themes($IPRWC_Webshop-theme);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

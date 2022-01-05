@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, Component, OnInit} from '@angular/core';
+import {UserService} from "./user.service";
+import {User} from "./user.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-account',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    if(this.userService.user == User._emptyUser) {
+      this.router.navigate(["/login"]);
+    }
   }
-
 }

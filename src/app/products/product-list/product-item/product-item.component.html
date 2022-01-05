@@ -1,1 +1,9 @@
-<p>product-item works!</p>
+<div class="card text-center">
+  <img src="{{ this.product.imageLink }}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{ this.product.name }}</h5>
+    <h6 class="card-subtitle">${{ this.product.price.toFixed(2) }}</h6>
+    <p class="card-text">{{ this.product.description }}</p>
+    <a class="btn card-button" type="button" (click)="onAddToCart()">Add to Cart</a>
+  </div>
+</div>

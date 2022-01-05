@@ -1,15 +1,41 @@
-.header-icon {
-  font-size: 1.3rem;
+@import "src/styles.scss";
+
+nav {
+  filter: drop-shadow(0 0 3px $shadow);
+  margin-bottom: 1rem;
 }
 
-.header-icon-spacer {
-  flex:0.1 0;
+header a {
+  font-size: 1.5em;
 }
 
-.header-items-spacer {
-  flex: 0.2 0;
+.nav-item {
+  margin-right: 1rem;
+  max-width: 70vw;
 }
 
-.header-raised-button-spacer {
-  flex: 1 0 auto;
+a.nav-link {
+  text-transform: capitalize;
+  background-color: transparent;
+  @include inactive-default-button;
+}
+
+a.nav-link.raised {
+  @include default-button-raised;
+}
+
+a.nav-link.active,
+a.nav-link:hover {
+  @include default-button;
+}
+
+a.nav-link.raised.active,
+a.nav-link.raised:hover {
+  @include default-button;
+}
+
+@media only screen and (max-width: 575px) {
+  #toggleMobileMenu {
+    margin: 0 15% 0 15%;
+  }
 }

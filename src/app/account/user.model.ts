@@ -1,5 +1,9 @@
 export class User {
-  constructor(private _username: string, private _email: string) {
+  public static _emptyUser = new User("", "", "");
+
+  constructor(private _username: string,
+              private _email: string,
+              private _token: string) {
   }
 
   get username(): string {
@@ -16,5 +20,17 @@ export class User {
 
   set email(value: string) {
     this._email = value;
+  }
+
+  get token(): string {
+    return this._token;
+  }
+
+  set token(value: string) {
+    this._token = value;
+  }
+
+  get emptyUser(): User {
+    return User._emptyUser;
   }
 }

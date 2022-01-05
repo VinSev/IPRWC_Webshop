@@ -1,26 +1,53 @@
-@use '@angular/material' as mat;
-@include mat.core();
+//@import "src/styles.scss";
 
-$IPRWC_Webshop-primary: mat.define-palette(mat.$indigo-palette);
-$IPRWC_Webshop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$primary: #ffffff;
+$secondary: #000000;
+$primary-background-color: #ffffff;
+$secondary-background-color: #373A3E;
+$purple: #7D4698;
+$shadow: #373A3E;
+$inactive-font-color: #d5dfdc;
 
-$IPRWC_Webshop-warn: mat.define-palette(mat.$red-palette);
+@mixin transition-settings {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
 
-$IPRWC_Webshop-theme: mat.define-light-theme((
-  color: (
-    primary: $IPRWC_Webshop-primary,
-    accent: $IPRWC_Webshop-accent,
-    warn: $IPRWC_Webshop-warn,
-  )
-));
+@mixin default-button {
+  color: $primary !important;
+  background-color: $purple !important;
+  box-shadow: 0 2px 3px 0 $shadow;
+  border: $primary solid medium;
+  border-radius: 20px 2px 20px 2px;
+  @include transition-settings;
+}
 
-@include mat.all-component-themes($IPRWC_Webshop-theme);
+@mixin inactive-default-button {
+  color: $primary !important;
+  background-color: $purple;
+  box-shadow: 0 2px 3px 0 transparent;
+  border: transparent solid medium;
+  border-radius: 0;
+  @include transition-settings;
+}
+
+@mixin default-button-raised {
+  @include default-button;
+  color: $secondary !important;
+  background-color: white !important;
+
+}
 
 html, body {
   height: 100%;
 }
 
 body {
-  margin: 0;
+  font-size: 15px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.80857;
+  background-color: $primary;
 }

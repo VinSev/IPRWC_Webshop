@@ -1,49 +1,44 @@
-<mat-toolbar color="primary" class="mat-elevation-z4">
-  <a mat-button
-     class="header-icon"
-     routerLink="home">
-    UnionStore
-  </a>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #7D4698FF" role="navigation">
+  <div class="container">
+    <header class="navbar-header">
+      <a routerLink="home" class="navbar-brand">OnionShop</a>
+    </header>
 
-  <div class="header-icon-spacer"></div>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <a mat-button
-     class="header-items-spacer"
-     routerLink="home">
-    <mat-icon>home</mat-icon>
-    Home
-  </a>
+    <div class="collapse navbar-collapse" id="toggleMobileMenu">
+      <ul class="nav navbar-nav ms-auto text-center">
+        <li class="nav-item">
+          <a routerLink="home" class="nav-link" routerLinkActive="active">Home</a>
+        </li>
 
-  <a mat-button
-     class="header-items-spacer"
-     routerLink="products">
-    <mat-icon>list</mat-icon>
-    Products
-  </a>
-  <a mat-button
-     class="header-items-spacer"
-     routerLink="shopping-cart">
-    <mat-icon>shopping_cart</mat-icon>
-    Shopping Cart
-  </a>
+        <li class="nav-item">
+          <a routerLink="products" class="nav-link" routerLinkActive="active">Products</a>
+        </li>
 
-  <div class="header-raised-button-spacer"></div>
+        <li class="nav-item">
+          <a routerLink="shopping-cart" class="nav-link" routerLinkActive="active">Shopping Cart</a>
+        </li>
 
-  <div [ngSwitch]="true">
-    <a mat-raised-button
-       *ngSwitchCase="true"
-       color="accent"
-       routerLink="login">
-      <mat-icon>login</mat-icon>
-      Login
-    </a>
-    <a mat-raised-button
-       *ngSwitchCase="false"
-       color="accent"
-       routerLink="account">
-      <mat-icon>account_circle</mat-icon>
-      Account
-    </a>
+        <div [ngSwitch]="this.userService.user !== this.userService.user.emptyUser">
+          <li class="nav-item">
+            <a *ngSwitchCase="false" routerLink="login" class="nav-link raised" routerLinkActive="active">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a *ngSwitchCase="true" routerLink="account" class="nav-link raised" routerLinkActive="active">Account</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+
   </div>
-
-</mat-toolbar>
+</nav>

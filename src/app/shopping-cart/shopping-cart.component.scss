@@ -1,0 +1,9 @@
+@import "src/styles.scss";
+
+.order-button {
+  @include default-button;
+}
+
+.order-button:hover {
+  @include default-button-raised;
+}

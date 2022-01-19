@@ -37,7 +37,7 @@ export class ShoppingCartService {
     if(amount == 0) {
       this._products.delete(product);
     } else {
-      this._products.set(product, amount - 1);
+      this._products.set(product, amount);
     }
   }
 

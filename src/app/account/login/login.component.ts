@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../account/user.service";
+import {UserService} from "../user.service";
 import {Observable, Observer} from "rxjs";
 import {Router} from "@angular/router";
-import {User} from "../account/user.model";
+import {User} from "../user.model";
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public login(username: string, email: string, password: string, remember: string): void {
+  public login(username: string, email: string, password: string): void {
     let observer: Observable<string> = this.userService.login(username, email, password);
 
     observer

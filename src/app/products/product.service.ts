@@ -10,9 +10,7 @@ import {Product} from "./product.model";
 export class ProductService {
   private baseURL: String = "http://localhost:8080/api/v1";
 
-  constructor(private http: HttpClient) {
-    this.getProducts();
-  }
+  constructor(private http: HttpClient) { }
 
   public getProducts(): Observable<Product[]> {
     return this.http

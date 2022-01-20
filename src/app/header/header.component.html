@@ -28,6 +28,12 @@
           <a routerLink="shopping-cart" class="nav-link" routerLinkActive="active">Shopping Cart</a>
         </li>
 
+        <div *ngIf="this.userService.user !== this.userService.user.emptyUser">
+          <li class="nav-item">
+            <a routerLink="orders" class="nav-link" routerLinkActive="active">Orders</a>
+          </li>
+        </div>
+
         <div [ngSwitch]="this.userService.user !== this.userService.user.emptyUser">
           <li class="nav-item">
             <a *ngSwitchCase="false" routerLink="login" class="nav-link raised" routerLinkActive="active">Login</a>

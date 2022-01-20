@@ -13,6 +13,13 @@ export class ShoppingCartService {
     return this._products;
   }
 
+  public setProducts(products: Product[]): void {
+    this.clear();
+    for(let product of products) {
+      this.add(product);
+    }
+  }
+
   public clear(): void {
     this._products.clear();
   }

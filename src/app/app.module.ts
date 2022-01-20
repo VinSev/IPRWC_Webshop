@@ -10,10 +10,13 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './account/login/login.component';
 import { AccountComponent } from './account/account.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderComponent } from './orders/order/order.component';
+import { RegisterComponent } from './account/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ProductItemComponent } from './products/product-list/product-item/produ
     LoginComponent,
     AccountComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    OrdersComponent,
+    OrderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

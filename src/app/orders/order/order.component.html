@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md4 text-center">
+    <form>
+      <h4 class="mb-3">Order</h4>
+      <label for="streetName" class="visually-hidden">Street Name</label>
+      <input type="text"
+             id="streetName"
+             class="form-control mb-2"
+             placeholder="Street Name" required autofocus #streetName>
+
+      <label for="houseNumber" class="visually-hidden">House Number</label>
+      <input type="number"
+             id="houseNumber"
+             class="form-control mb-2"
+             placeholder="House Number" required #houseNumber>
+
+      <label for="postCode" class="visually-hidden">Postcode</label>
+      <input type="text"
+             id="postCode"
+             class="form-control mb-2"
+             placeholder="Postcode" required #postcode>
+
+      <label for="placeName" class="visually-hidden">Place Name</label>
+      <input type="text"
+             id="placeName"
+             class="form-control mb-2"
+             placeholder="Place Name" required #placeName>
+
+      <p class="alert-warning" *ngIf="showErrorMessage">Something went wrong, please try again</p>
+      <div class="mt-3">
+        <p class="float-start"><b>Total Price: </b>${{ shoppingCartService.totalPrice() }}</p>
+        <a type="button"
+           class="btn form-button w-100"
+           (click)="order(streetName.value, houseNumber.value, postcode.value, placeName.value)">
+          Order
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

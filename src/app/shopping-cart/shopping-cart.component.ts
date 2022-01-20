@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ShoppingCartService} from "./shopping-cart.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,9 +9,16 @@ import {ShoppingCartService} from "./shopping-cart.service";
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor(public shoppingCartService: ShoppingCartService) { }
+  constructor(public shoppingCartService: ShoppingCartService,
+              private router: Router) {
+  }
 
   public ngOnInit(): void {
   }
+
+  public order(): void {
+    this.router.navigate(["shopping-cart/order"]);
+  }
+
 
 }

@@ -1,4 +1,4 @@
-@import "src/styles.scss";
+@import "../../../styles";
 
 form {
   max-width: 480px;
@@ -14,10 +14,6 @@ form {
 
 .form-button:hover {
   @include default-button;
-}
-
-input[type="checkbox"]:checked {
-  color: $purple;
 }
 
 @media only screen and (max-width: 480px) {

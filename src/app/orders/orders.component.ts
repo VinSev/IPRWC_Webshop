@@ -6,6 +6,7 @@ import {Order} from "./order.interface";
 import {ShoppingCartService} from "../shopping-cart/shopping-cart.service";
 import {Product} from "../products/product.model";
 import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
+import {OrderItem} from "./order-item.interface";
 
 @Component({
   selector: 'app-orders',
@@ -28,9 +29,6 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders(this.userService.user.email, this.userService.user.token)
       .subscribe(orders => {
         this.orders = orders;
-        orders[0].products.forEach((value, product, map) => {
-          console.log(product.name)
-        })
       });
   }
 
@@ -39,10 +37,10 @@ export class OrdersComponent implements OnInit {
     this.orderService.deleteOrder(order, this.userService.user.token);
   }
 
-  public totalPrice(products: IterableIterator<[Product, number]>): string {
+  public totalPrice(orderItems: OrderItem[]): string {
     let total: number = 0;
-    for(let entry of Array.from(products)) {
-      total += entry[0].price * entry[1];
+    for (let orderItem of orderItems) {
+      console.log(orderItem.product);
     }
     return total.toFixed(2);
   }

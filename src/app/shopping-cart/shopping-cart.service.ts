@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Product} from "../products/product.model";
+import {OrderItem} from "../orders/order-item.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,14 @@ export class ShoppingCartService {
     for(let product of products) {
       this.add(product);
     }
+  }
+
+  public getOrderItems(): OrderItem[] {
+    let orderItems: OrderItem[] = [];
+    this._products.forEach((amount, product) => {
+      orderItems.push({product, amount});
+    })
+    return orderItems;
   }
 
   public clear(): void {

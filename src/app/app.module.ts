@@ -11,7 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './account/login/login.component';
-import { AccountComponent } from './account/account.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -27,7 +26,6 @@ import { AdminComponent } from './account/login/admin/admin.component';
     ProductsComponent,
     ShoppingCartComponent,
     LoginComponent,
-    AccountComponent,
     ProductListComponent,
     ProductItemComponent,
     OrdersComponent,

@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
       .subscribe(token => {
         if(token != "") {
           this.showErrorMessage = false;
-          this.userService.user = new User(username, email, "USER",token);
-          this.router.navigate(["/account"]);
+          this.userService.user = new User(username, email, "USER", token);
+          this.router.navigate([""]);
         } else {
           console.log(this.userService.user)
           this.showErrorMessage = true

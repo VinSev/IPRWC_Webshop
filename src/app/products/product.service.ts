@@ -21,6 +21,7 @@ export class ProductService {
     let requestOptions = {
       headers: new HttpHeaders({"Authorization": "Bearer " + token}),
     };
+    console.log(product)
     this.http
       .post<Product>(this.baseURL + "/products", product, requestOptions).subscribe();
   }

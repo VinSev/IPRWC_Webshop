@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Order} from "./order.interface";
 import {Observable} from "rxjs";
+import {OrderItem} from "./order-item.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,20 @@ export class OrderService {
 
   public postOrder(order: Order, email: String, token: String): void {
     let requestOptions: { headers: HttpHeaders } = {
-      headers: new HttpHeaders({"Authorization": "Bearer " + token})
+      headers: new HttpHeaders({
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json"
+      })
     };
+    let body = {
+      "streetName": order.getStreetName(),
+      "houseNumber": order.getHouseNumber(),
+      "postcode": order.getPostcode(),
+      "placeName": order.getPlaceName(),
+      "products": order.getProducts()
+    };
+    console.log(body)
+    console.log(requestOptions)
     this.http
       .post<Order>(this.baseURL + "/orders/" + email, order, requestOptions).subscribe();
   }

@@ -1,12 +1,73 @@
 import {Product} from "../products/product.model";
 import {OrderItem} from "./order-item.interface";
 
-export type Order = {
-  id?: number;
-  streetName: String;
-  houseNumber: number;
-  postcode: String;
-  placeName: String;
-  date_last_updated?: String;
-  products: OrderItem[];
+export class Order {
+  constructor(private streetName: String,
+              private houseNumber: number,
+              private postcode: String,
+              private placeName: String,
+              public products: OrderItem[],
+              private id?: number,
+              private date_last_updated?: String) {
+  }
+
+  getStreetName(): String {
+    return this.streetName;
+  }
+
+  setStreetName(value: String) {
+    this.streetName = value;
+  }
+
+  getHouseNumber(): number {
+    return this.houseNumber;
+  }
+
+  setHouseNumber(value: number) {
+    this.houseNumber = value;
+  }
+
+  getPostcode(): String {
+    return this.postcode;
+  }
+
+  setPostcode(value: String) {
+    this.postcode = value;
+  }
+
+  getPlaceName(): String {
+    return this.placeName;
+  }
+
+  setPlaceName(value: String) {
+    this.placeName = value;
+  }
+
+  getProducts(): OrderItem[] {
+    return this.products;
+  }
+
+  setProducts(value: OrderItem[]) {
+    this.products = value;
+  }
+
+  clearProducts() {
+    this.products = [];
+  }
+
+  getId(): number {
+    return <number>this.id;
+  }
+
+  setId(value: number) {
+    this.id = value;
+  }
+
+  getDate_last_updated(): String {
+    return <String>this.date_last_updated;
+  }
+
+  setDate_last_updated(value: String) {
+    this.date_last_updated = value;
+  }
 }

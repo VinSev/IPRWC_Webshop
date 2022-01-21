@@ -1,10 +1,15 @@
 import {Product} from "../products/product.model";
 
-export type OrderItem = {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  imageLink: string;
-  amount: number;
+export class OrderItem {
+
+
+  constructor(public id: number,
+              public name: string,
+              public description: string,
+              public price: number,
+              public imageLink: string,
+              public amount: number) {
+  }
+
+
 }

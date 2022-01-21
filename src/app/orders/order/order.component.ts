@@ -30,13 +30,20 @@ export class OrderComponent implements OnInit {
                houseNumber: String,
                postcode: String,
                placeName: String): void {
-    let order: Order = {
-      streetName: streetName,
-      houseNumber: Number(houseNumber),
-      postcode: postcode,
-      placeName: placeName,
-      products: this.shoppingCartService.getOrderItems()
-    };
+    // let order: Order = {
+    //   streetName: streetName,
+    //   houseNumber: Number(houseNumber),
+    //   postcode: postcode,
+    //   placeName: placeName,
+    //   products: this.shoppingCartService.getOrderItems()
+    // };
+    let order: Order = new Order(
+      streetName,
+      Number(houseNumber),
+      postcode, placeName,
+      this.shoppingCartService.
+      getOrderItems()
+    );
     this.orderService.postOrder(order, this.userService.user.email, this.userService.user.token);
   }
 

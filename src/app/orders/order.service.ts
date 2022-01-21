@@ -35,8 +35,6 @@ export class OrderService {
       "products": order.getProducts(),
       "dateLastUpdated": "none"
     };
-    console.log(body)
-    console.log(requestOptions)
     this.http
       .post<Order>(this.baseURL + "/orders/" + email, order, requestOptions).subscribe();
   }

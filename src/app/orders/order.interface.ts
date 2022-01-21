@@ -7,8 +7,8 @@ export class Order {
               private postcode: String,
               private placeName: String,
               public products: OrderItem[],
-              private id?: number,
-              private date_last_updated?: String) {
+              private dateLastUpdated: String,
+              private id?: number) {
   }
 
   getStreetName(): String {
@@ -64,10 +64,10 @@ export class Order {
   }
 
   getDate_last_updated(): String {
-    return <String>this.date_last_updated;
+    return <String>this.dateLastUpdated;
   }
 
   setDate_last_updated(value: String) {
-    this.date_last_updated = value;
+    this.dateLastUpdated = value;
   }
 }

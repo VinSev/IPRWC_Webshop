@@ -8,7 +8,7 @@ import {OrderItem} from "./order-item.interface";
   providedIn: 'root'
 })
 export class OrderService {
-  private baseURL: String = "http://localhost:8080/api/v1";
+  private baseURL: String = "https://iprwc-api.herokuapp.com/api/v1";
 
   constructor(private http: HttpClient) { }
 

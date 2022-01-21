@@ -8,7 +8,7 @@ import {Product} from "./product.model";
   providedIn: 'root'
 })
 export class ProductService {
-  private baseURL: String = "http://localhost:8080/api/v1";
+  private baseURL: String = "https://iprwc-api.herokuapp.com/api/v1";
 
   constructor(private http: HttpClient) { }
 

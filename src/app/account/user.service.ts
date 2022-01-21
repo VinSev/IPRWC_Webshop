@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class UserService {
-  private baseURL: String = "http://localhost:8080/api/v1";
+  private baseURL: String = "https://iprwc-api.herokuapp.com/api/v1";
   private _user: User = User._emptyUser;
 
   constructor(private http: HttpClient) {

@@ -7,7 +7,7 @@ export class Order {
               private postcode: String,
               private placeName: String,
               public products: OrderItem[],
-              private dateLastUpdated: String,
+              public dateLastUpdated: String,
               private id?: number) {
   }
 

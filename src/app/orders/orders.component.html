@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let order of orders" (click)="remove(order)">
-      <td>{{ order.getDate_last_updated }}</td>
+      <td>{{ order.getDate_last_updated() }}</td>
       <td>${{ totalPrice( order.products ) }}</td>
     </tr>
     </tbody>

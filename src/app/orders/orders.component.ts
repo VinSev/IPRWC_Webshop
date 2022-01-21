@@ -30,7 +30,7 @@ export class OrdersComponent implements OnInit {
       .subscribe(orders => {
         this.orders = orders;
         orders.forEach(order => {
-          console.log("Date: " + order.getDate_last_updated());
+          console.log("Date: " + order.dateLastUpdated);
         })
       });
   }

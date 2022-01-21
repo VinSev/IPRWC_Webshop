@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../user.service";
-import {Observable, Observer} from "rxjs";
+import {UserService} from "../../user.service";
 import {Router} from "@angular/router";
-import {User} from "../user.model";
+import {User} from "../../user.model";
+import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class AdminComponent implements OnInit {
   public showErrorMessage: boolean = false;
 
   constructor(private userService: UserService,
@@ -23,20 +23,21 @@ export class LoginComponent implements OnInit {
   }
 
   public login(username: string, email: string, password: string): void {
-    let observer: Observable<string> = this.userService.login(username, email, password);
+    let observer: Observable<string> = this.userService.login(username, email, password, "ADMIN");
 
     observer
       .subscribe(token => {
         if(token != "") {
           this.showErrorMessage = false;
-          this.userService.user = new User(username, email, "USER",token);
+          this.userService.user = new User(username, email, "ADMIN",token);
           this.router.navigate(["/account"]);
         } else {
           console.log(this.userService.user)
           this.showErrorMessage = true
-      }
-    }, error => {
+        }
+      }, error => {
         this.showErrorMessage = true;
       });
   }
+
 }

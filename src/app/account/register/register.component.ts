@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(token => {
         if(token != "") {
           this.showErrorMessage = false;
-          this.userService.user = new User(username, email, token);
+          this.userService.user = new User(username, email, "USER",token);
           this.router.navigate(["/account"]);
         } else {
           console.log(this.userService.user)

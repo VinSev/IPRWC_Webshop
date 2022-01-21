@@ -1,8 +1,9 @@
 export class User {
-  public static _emptyUser = new User("", "", "");
+  public static _emptyUser = new User("", "", "", "");
 
   constructor(private _username: string,
               private _email: string,
+              private _role: string,
               private _token: string) {
   }
 
@@ -20,6 +21,14 @@ export class User {
 
   set email(value: string) {
     this._email = value;
+  }
+
+  get role(): string {
+    return this._role;
+  }
+
+  set role(value: string) {
+    this._role = value;
   }
 
   get token(): string {

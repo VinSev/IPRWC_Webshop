@@ -21,11 +21,12 @@ export class UserService {
     this._user = value;
   }
 
-  public login(username: string, email: string, password: string): Observable<string> {
+  public login(username: string, email: string, password: string, role?: string): Observable<string> {
     let body: unknown = {
       "username": username,
       "email": email,
-      "password": password
+      "password": password,
+      "role": role
     }
     return this.http
       .post(this.baseURL + "/users/login", body, {responseType: "text"});

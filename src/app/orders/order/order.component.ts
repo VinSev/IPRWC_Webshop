@@ -42,7 +42,8 @@ export class OrderComponent implements OnInit {
       Number(houseNumber),
       postcode, placeName,
       this.shoppingCartService.
-      getOrderItems()
+      getOrderItems(),
+      "none"
     );
     this.orderService.postOrder(order, this.userService.user.email, this.userService.user.token);
   }

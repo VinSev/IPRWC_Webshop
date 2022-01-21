@@ -33,7 +33,7 @@ export class OrderService {
       "postcode": order.getPostcode(),
       "placeName": order.getPlaceName(),
       "products": order.getProducts(),
-      "dateLastUpdated": "none"
+      "dateLastUpdated": order.getDate_last_updated()
     };
     this.http
       .post<Order>(this.baseURL + "/orders/" + email, order, requestOptions).subscribe();

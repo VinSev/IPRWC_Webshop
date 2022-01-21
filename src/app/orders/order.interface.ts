@@ -62,12 +62,4 @@ export class Order {
   setId(value: number) {
     this.id = value;
   }
-
-  getDate_last_updated(): String {
-    return <String>this.dateLastUpdated;
-  }
-
-  setDate_last_updated(value: String) {
-    this.dateLastUpdated = value;
-  }
 }

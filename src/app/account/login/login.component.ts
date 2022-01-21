@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit(): void {
     if(this.userService.user != User._emptyUser) {
-      this.router.navigate(["/account"]);
+      this.router.navigate([""]);
     }
   }
 

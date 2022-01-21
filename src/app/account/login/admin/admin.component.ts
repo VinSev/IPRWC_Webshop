@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
 
   public ngOnInit(): void {
     if(this.userService.user != User._emptyUser) {
-      this.router.navigate(["/account"]);
+      this.router.navigate([""]);
     }
   }
 
@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
         if(token != "") {
           this.showErrorMessage = false;
           this.userService.user = new User(username, email, "ADMIN",token);
-          this.router.navigate(["/account"]);
+          this.router.navigate([""]);
         } else {
           console.log(this.userService.user)
           this.showErrorMessage = true

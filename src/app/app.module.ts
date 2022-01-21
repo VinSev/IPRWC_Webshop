@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './account/login/login.component';
@@ -17,12 +16,12 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrderComponent } from './orders/order/order.component';
 import { RegisterComponent } from './account/register/register.component';
 import { AdminComponent } from './account/login/admin/admin.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
     ProductsComponent,
     ShoppingCartComponent,
     LoginComponent,
@@ -31,7 +30,8 @@ import { AdminComponent } from './account/login/admin/admin.component';
     OrdersComponent,
     OrderComponent,
     RegisterComponent,
-    AdminComponent
+    AdminComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

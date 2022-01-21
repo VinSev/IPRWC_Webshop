@@ -24,7 +24,7 @@ export class OrderService {
       headers: new HttpHeaders({"Authorization": "Bearer " + token})
     };
     this.http
-      .post<Order>(this.baseURL + "/orders/" + email, order, requestOptions);
+      .post<Order>(this.baseURL + "/orders/" + email, order, requestOptions).subscribe();
   }
 
   public putOrder(order: Order, token: String): void {
@@ -32,7 +32,7 @@ export class OrderService {
       headers: new HttpHeaders({"Authorization": "Bearer " + token})
     };
     this.http
-      .put<Order>(this.baseURL + "/orders", order, requestOptions);
+      .put<Order>(this.baseURL + "/orders", order, requestOptions).subscribe();
   }
 
   public deleteOrder(order: Order, token: String): void {
@@ -41,6 +41,6 @@ export class OrderService {
       body: order
     };
     this.http
-      .delete<Order>(this.baseURL + "/orders", requestOptions);
+      .delete<Order>(this.baseURL + "/orders", requestOptions).subscribe();
   }
 }

@@ -40,7 +40,7 @@ export class OrdersComponent implements OnInit {
   public totalPrice(orderItems: OrderItem[]): string {
     let total: number = 0;
     for (let orderItem of orderItems) {
-      console.log(orderItem.product);
+      total += orderItem.price * orderItem.amount;
     }
     return total.toFixed(2);
   }

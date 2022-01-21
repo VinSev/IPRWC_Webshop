@@ -24,7 +24,7 @@ export class ShoppingCartService {
   public getOrderItems(): OrderItem[] {
     let orderItems: OrderItem[] = [];
     this._products.forEach((amount, product) => {
-      orderItems.push({product, amount});
+      orderItems.push(<OrderItem><unknown>[product.id, product.name, product.description, product.price, product.imageLink, amount]);
     })
     return orderItems;
   }

@@ -29,9 +29,6 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders(this.userService.user.email, this.userService.user.token)
       .subscribe(orders => {
         this.orders = orders;
-        orders.forEach(order => {
-          console.log("Date: " + order.dateLastUpdated);
-        })
       });
   }
 

@@ -29,6 +29,9 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders(this.userService.user.email, this.userService.user.token)
       .subscribe(orders => {
         this.orders = orders;
+        orders.forEach(order => {
+          console.log("Date: " + order.getDate_last_updated());
+        })
       });
   }
 
@@ -40,7 +43,6 @@ export class OrdersComponent implements OnInit {
   public totalPrice(orderItems: OrderItem[]): string {
     let total: number = 0;
     for (let orderItem of orderItems) {
-      console.log(orderItem)
       total += orderItem.price * orderItem.amount;
     }
     return total.toFixed(2);

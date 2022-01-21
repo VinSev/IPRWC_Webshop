@@ -32,7 +32,8 @@ export class OrderService {
       "houseNumber": order.getHouseNumber(),
       "postcode": order.getPostcode(),
       "placeName": order.getPlaceName(),
-      "products": order.getProducts()
+      "products": order.getProducts(),
+      "dateLastUpdated": "none"
     };
     console.log(body)
     console.log(requestOptions)

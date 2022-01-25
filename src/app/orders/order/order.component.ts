@@ -43,7 +43,7 @@ export class OrderComponent implements OnInit {
       postcode, placeName,
       this.shoppingCartService.
       getOrderItems(),
-      "none"
+      new Date().toISOString()
     );
     this.orderService.postOrder(order, this.userService.user.email, this.userService.user.token);
   }
